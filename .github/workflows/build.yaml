@@ -10,5 +10,5 @@ jobs:
       MY_NAME: value
     steps:
       - run: echo 'Hi ${{ env.mascot }}'  # Hi Tux
-      - run: echo ENV val is '${{ env.MY_TEST_ENV_KEY }}' 
+      - run: echo ENV val is '${{ vars.MY_TEST_ENV_KEY }}' 
       - run: env | grep -i MY_
