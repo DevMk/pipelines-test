@@ -2,13 +2,10 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  dump-env:
     runs-on: ubuntu-latest
     environment: prod
     env:
-      mascot: Tux
-      MY_NAME: value
+      MY_NAME: ${{ vars.MY_TEST_ENV_KEY }}
     steps:
-      - run: echo 'Hi ${{ env.mascot }}'  # Hi Tux
-      - run: echo ENV val is '${{ vars.MY_TEST_ENV_KEY }}' 
       - run: env | grep -i MY_
